@@ -1,0 +1,16 @@
+PM2  node server启动方式
+
+pm2  基于进程管理
+
+如 pm2 start app.js   启动服务
+ 
+pm2 stop 停止服务  后面可加all   pm2 update 更新   pm2 list  列表   pm2 log  日志
+
+
+Mongoose  对MongoDB的封装  提供增删改查
+
+创建model
+
+创建路由
+
+基于mongoose，实现商品列表的查询功能
