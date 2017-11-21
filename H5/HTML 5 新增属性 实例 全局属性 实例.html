@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!-- manifest定义这个页面需要用到离线应用文件 -->
+<html lang="en" manifest="cache.manifest"> 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="pragma" content="no-cache">
+    <title>HTML5 新增属性实例</title>
+    <!-- link定义网页title前面的小图标 -->
+    <link rel="icon" type="image/gif" href="xxx.gif" sizes="16x16">
+    <!-- 页面所有链接新窗口打开，href作为路径的原地址 -->
+    <base href="http://localhost/" target="_blank">
+
+    <script defer src="http://code.jquery.com/jquery-1.10.1.min.js" onload="alert('a')"></script>
+    <script async src="http://code.jquery.com/jquery-migrate-1.2.1.min.js" onload="alert('b')"></script>
+</head>
+    <a href="" media="handheld">手持</a>
+    <a href="" media="tv">电视</a>
+    <a href="" hreflang="zh" ref="external">慕课网</a>
+
+    <ol start="50" reversed>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ol>
+
+    <menu type="toolbar" label="Menu">
+        <li><input type="checkbox" />Red</li>
+        <li><input type="checkbox" />blue</li>
+    </menu>
+
+    <div>
+        <style type="text/css" scoped>
+            h1 {color:red;}
+            p {color:blue;}
+        </style>
+        <h1>This is a head</h1>
+        <p>This is a paragraph</p>
+    </div>
+
+    <iframe seamless srcdoc="<h1>Hello</h1>" sandbox src="http://www.baidu.com" frameborder=""></iframe>
+    <iframe seamless sandbox src="http://www.baidu.com"></iframe>
+    <iframe seamless sandbox="allow-forms" src="http://www.baidu.com"></iframe>
+
+    <h2>全局属性</h2>
+    <form data-type="comment" class="container">
+        <h3>留言板</h3>
+        <label hidden>看见了吗？</label>
+        <p><label>
+            <span>姓名</span>
+            <input tabindex="1">
+        </label></p>
+
+        <p><label>
+            <span>邮件</span>
+            <input tabindex="3">
+        </label></p>
+
+        <p><label>
+            <span>留言</span>
+            <textarea tabindex="2" spellcheck="true" cols="60" rows="5"></textarea>
+        </label>
+        </p>
+        <table contenteditable="true">
+            <tr>
+                <td>数据一</td>
+                <td>数据二</td>
+            </tr>
+        </table>
+        <p contenteditable="true">请您留言</p>
+    </form>
+<body>
+    
+</body>
+</html>
