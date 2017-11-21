@@ -1,0 +1,3 @@
+cnpm i --save vue-loader babel-preset-env babel-core
+
+cnpm i --save vue-template-compiler
