@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML5 实例</title>
+</head>
+<body>
+	<h3>mark</h3>
+	<p>Do not forget to buy
+		<mark>milk</mark>   <!-- 标注标签 -->
+		today.
+	</p>
+	<h3>progress</h3>		
+	<progress max="100" value="85">		<!-- 进度条标签 -->
+		<span>85</span>
+		%
+	</progress>
+	<h3>time</h3>
+	<p>
+		发布日期
+		<time datetime="2013-10-18T09:00">9:00</time><!--  时间标签，datetime标注的时间给浏览器解析用 -->
+		更新日期
+		<time datetime="2013-10-20T09:00Z" pubdate>9:00</time><!-- 发布时间 -->
+	</p>
+	<p>我在明天有个约会</p>
+	<h3>ruby</h3>   <!-- 对某一个字进行注释 -->
+	<ruby>
+		漢
+		<rt></rt>  <!-- 注释 -->
+		<rp>(</rp>  <!-- 如果浏览器不支持该如何显示 -->
+		厂兯
+		<rp>)</rp>
+	</ruby>
+	<h3>wbr</h3>   <!-- 软换行 -->
+	<p>
+		如果想学习AJAX，那么您必须熟悉XML
+		<wbr></wbr>					
+		Http Request 对象。
+	</p>
+	<h3>canvas</h3>
+	<canvas id="myCanvas">		<!-- 图形绘制 -->
+		<script>
+			var canvas=document.getElementById('myCanvas');
+			var ctx=canvas.getContext('2d');
+			ctx.fillStyle='#FF0000';
+			ctx.fillRect(0,0,80,100);
+		</script>
+	</canvas>
+	<h3>command</h3>    <!-- 表示命令菜单（浏览器支持不大） -->
+	<menu>
+		<command onclick="alert('Hello World')" label="click">
+			Click Me!
+	</menu>
+	<h3>details</h3>
+		<details open>		<!-- 能展开和收缩内容 -->
+			<summary>MacBook Pro Specification</summary>
+			<ul>
+				<li>123123123123</li>
+				<li>区委区委区委区委万千瓦</li>
+				<li>asdasdasdasdasdasdasdasdasdasdasdasdasdas</li>
+				<li>自行车自行车自行车自行车自行车自行车自行车</li>
+				<li>dwecwdcwdcwdcwdwcwdcwd</li>
+			</ul>
+		</details>
+	<h3>datalist</h3>
+	<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+		<input id="myCar" list="cars">	<!-- 输入框下拉显示和输入提示 -->
+		<datalist id="cars">	<!-- list与id关联，类似input和label -->
+			<option value="BMW"></option>
+			<option value="Ford"></option>
+			<option value="Volvo"></option>
+		</datalist>
+	</form>
+	<h3>keygen</h3>    <!-- 加密 -->
+	<form action="demo_keygen" method="get">
+			Username:
+		<label></label>
+			Encryption:
+		<keygen name="security">
+		<input type="submit">
+	</form>
+	<h3>output</h3>  <!-- 在表单里进行计算 -->
+	<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+		0
+		<input type="range" id="a" value="50">
+		100 +
+		<input type="number" id="b" value="50">
+		=
+		<output name="x" for="a b">
+			139
+		</output>
+	</form>
+	<h3>menu</h3>   <!-- 三种类型菜单 -->
+	<menu type="toolbar">  
+		<li>
+			<input type="checkbox" />
+			Red
+		</li>
+		<li>
+			<input type="checkbox" />
+			blue
+		</li>
+	</menu>
+	
+</body>
+</html>
