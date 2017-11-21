@@ -1,0 +1,54 @@
+mongodb启动：
+
+mongod --dbpath d:\zm2\MongoDB\data    //第一次启动
+
+然后配置.conf
+
+再次启动：
+
+mongod --config d:\zm2\MongoDB\etc\mongo.conf
+
+
+以管理员启动命令符
+
+cd 到
+
+D:\zm2\前端\mongodb\bin
+
+执行
+
+mongod --config d:\zm2\MongoDB\etc\mongo.conf
+
+
+也可以装到windows服务里：
+
+命令：mongod --config d:\zm2\MongoDB\etc\mongo.conf --install --serviceName "MongoDB"
+
+查询>show dbs
+
+
+MongoDB创建账号:  老版本用addUser创建  roles: 角色  
+db.createUser({user:"admin",pwd:"321",roles:["root"]})
+
+认证：
+db.auth("admin","321")
+
+db.createUser({user:"admin1",pwd:"321",roles:[{role:"dbOwner",db:"vue2-node-md"}]})
+
+创建 插入 更新 删除 查询 增删改查的操作：
+show dbs 
+use demo 创建
+db.createCollection("user")  || db.user.insert({id:123,name:"hello"})
+show collections 查询集合
+db.dropDatabase() 删除demo数据库
+db.user.drop() 删除user集合
+db.user.find() 查询user数据 || db.user.find() pretty() 将数据格式化后查看
+db.user.findOne() 查询user的第一条数据
+db.user.find({"class.name":"imooc"}) 查询子文档
+
+db.user.find({userAge:{$gt:20}}) 查询userAge大于20的数据 $lt是小于 $eq是等于 $gte大于等于
+
+db.user.update({userName:"Jack"},{$set:{userAge:30}})  更新数据
+db.user.updata({userName:"Jack"},{$set:{"class.name":"imooc"}}) 更新二级数据
+
+db.user.remove({userId:101}) 删除数据
