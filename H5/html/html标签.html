@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+h2{
+font-size:40px;
+color:#930;
+text-align:center;
+}
+</style>
+<style type="text/css">
+table tr td,th{border:1px solid #000;}
+</style>
+</head>
+
+<body>
+<h2>HTML基础</h2><br />
+<div id="html文件结构">html文件结构
+<pre>html
+head.../head
+body.../body
+/html
+(注意加尖括号)</pre></div><br />
+<div id="网页文字属性">
+	<pre>
+font-size:40px;   (字号)
+color:#930;       (颜色)
+text-align:center;(居中)
+</pre><br/>
+</div>
+html代码注释：尖括号 !--注释文字-- 尖括号<br /><br /><br />
+<div id="html标签">
+	<table summary="本表格记录html各标签功能及用法">
+	<caption><strong>html各标签功能及用法</strong></caption>
+	<tr>
+		<th>序号</th>
+		<th>标签</th>
+		<th>功能</th>
+		<th>用法</th>
+		<th>备注</th>
+	</tr><tr>
+		<td>1</td>
+		<td>hx /hx(x=1-6数字)</td>
+		<td>标题标签</td>
+		<td>文章标题</td>
+		<td>标签用尖括号括起来</td>
+	</tr><tr>
+	<td>2</td>
+	<td>p /p</td>
+	<td>段落标签</td><td></td><td>3段文字要分别放到3个p标签里</td>
+</tr><tr>
+<td>3</td>
+<td>head /head</td>
+<td>文档头部</td>
+<td>描述文档属性和信息</td>
+<td>其内容不显示给读者</td>
+</tr><tr>
+<td>4</td>
+<td>title /title</td>
+<td>网页标题信息</td>
+<td>显示给用户和搜索引擎</td><td></td>
+</tr><tr>
+<td>5</td>
+<td>body /body</td>
+<td>展示页面内容</td>
+<td></td><td></td>
+</tr><tr>
+<td>6</td>
+<td>strong /strong;em /em</td>
+<td>强调语气标签</td>
+<td>strong:加粗；em:斜体</td><td></td>
+</tr><tr>
+<td>7</td>
+<td>span /span</td>
+<td>为文字设置单独样式</td>
+<td>如：单独设置颜色等</td><td></td>
+</tr><tr>
+<td>8</td>
+<td>q /q</td>
+<td>短文本引用</td><td>引用一句古诗等</td><td>双引号自动添加</td>
+</tr><tr>
+<td>9</td>
+<td>blockquote /blockquote</td>
+<td>长文本引用</td><td>引用一首古诗等</td><td>文本呈缩进样式</td>
+</tr><tr>
+<td>10</td>
+<td>br /</td>
+<td>换行/分行/回车</td><td>相当于回车</td><td>html忽略空格和回车</td>
+</tr><tr>
+<td>11</td>
+<td>nbsp(前面加&)</td>
+<td>空格标签</td><td>文本中加入空格</td><td></td>
+</tr><tr>
+<td>12</td>
+<td>hr /</td>
+<td>分隔的横线</td><td>使文章看起来整齐些</td><td>默认灰色</td>
+</tr><tr>
+<td>13</td>
+<td>address /address</td>
+<td>地址信息</td><td></td><td>默认显示为斜体</td>
+</tr><tr>
+<td>14</td>
+<td>code /code</td>
+<td>加入一行代码</td><td>显示出编程代码</td><td>显示多行代码用pre</td>
+</tr><tr>
+<td>15</td>
+<td>pre /pre</td>
+<td>加入多行代码</td><td>显示多行代码保持其格式</td><td>空格/换行等会被保留</td>
+</tr><tr>
+<td>16</td>
+<td>ul /ul</td>
+<td>添加新闻信息列表</td><td>没有前后顺序的信息列表</td><td>ul li信息/li /ul(每项信息前自带圆点)</td>
+</tr><tr>
+<td>17</td>
+<td>ol /ol</td>
+<td>添加排行榜列表</td><td>ol li信息/li /ol</td><td>每项自带数字，从1开始</td>
+</tr><tr>
+<td>18</td>
+<td>div /div</td>
+<td>排版/独立划分出来</td><td>网页栏目版块等</td><td>为网页划分独立的版块</td>
+</tr><tr>
+<td>19</td>
+<td>div id=“板块名称” /div</td>
+<td>为div提供唯一的名称</td><td>更好理解</td><td>使逻辑更清晰</td>
+</tr><tr>
+<td>20</td>
+<td>table /table</td>
+<td>添加表格标签</td><td>table tbody tr th td</td><td>tbody使表格一起显示出来</td>
+</tr><tr>
+<td>21</td>
+<td>caption /caption</td>
+<td>添加表格标题</td><td>table summary="表格简介"</td><td>表格简介之后是标题</td>
+</tr><tr>
+<td>22</td>
+<td>a /a</td>
+<td>超链接标签</td><td>a href="网址" title="鼠标滑过显示的文本"》链接显示的文本 /a</td><td>a:hover{color:red} 鼠标滑过的颜色(css选择器:伪类选择符)</td>
+</tr><tr>
+<td>23</td>
+<td>a /a</td>
+<td>超链接新窗口打开页面</td><td>把title部分换成target="_blank"</td><td></td>
+</tr><tr>
+<td>24</td>
+<td>a标签链接Email地址</td>
+<td>使用mailto</td><td>a href="mailto:邮件地址？cc=邮件地址&bcc=邮件地址&subject=主题&body=邮件内容"》发送/a</td><td>用分号隔开多个收件人地址</td>
+</tr><tr>
+<td>25</td>
+<td>img /img</td>
+<td>网页插入图片</td><td>img src="图片地址" alt="下载失败时的替换文本" title="My Image" /</td><td>src:标识图像的位置；alt:图片不可见时看到<br />的文本；title:鼠标滑过显示的文本；图片格式GIF，PNG，JPG</td>
+</tr><tr>
+<td>26</td>
+<td>form /form</td>
+<td>使用表单标签与用户交互</td><td>form method="传送方式" action="服务器文件"</td><td>method="post/get" action="save.php"</td>
+</tr><tr>
+<td>27</td>
+<td>form文本框/密码的输入</td>
+<td>form》input type="text/password" name="名称" value="文本" /》/form</td><td>name:为文本框命名，后台使用;value:为文本输入框设置默认值(一般提示作用)</td><td></td>
+</tr><tr>
+<td>28</td>
+<td>文本域,支持多行文本输入</td>
+<td>textarea rows="行数" cols="列数"》默认显示文本/textarea</td><td></td><td>行和列可用css样式代替</td>
+</tr><tr>
+<td>29</td>
+<td>单/复选框</td>
+<td>input type="radio/checkbox" value="值" name="名称" checked="checked"</td><td>radio:单,checkbox:双;value:提交数据到服务器的值,后台使用;name:为控件命名,后台使用;</td><td>checked="checked"该选项被默认选中;radio的name取值要一样,checkbox的name取值要不同</td>
+</tr><tr>
+<td>30</td>
+<td>下拉列表框</td>
+<td>select》option value="看书"selected="selected"》看书/option》/select</td><td></td><td>在form.../form之间</td>
+</tr><tr>
+<td>31</td>
+<td>下拉列表框多选</td>
+<td>在select标签中设置multiple="multiple"</td><td>多选时按Ctrl+单击(Mac下使用Command+单击)</td><td></td>
+</tr><tr>
+<td>32</td>
+<td>使用提交按钮,提交数据</td>
+<td>input type="submit" value="提交"</td><td>type="submit"时,按钮才有提交作用;value:按钮上显示的文字</td><td></td>
+</tr><tr>
+<td>33</td>
+<td>使用重置按钮,重置表单信息</td>
+<td>把type设置为reset</td><td></td><td></td>
+</tr><tr>
+<td>34</td>
+<td>form表单中的label标签</td>
+<td>label:为鼠标用户改进了可用性</td><td>label for="控件id名称";for属性中的值要与控件id属性值相同</td><td>如:label for"male"》男/label》input type="radio" name="gender" id="male"</td>
+</tr><tr>
+</div>
+
+</body>
+</html>
