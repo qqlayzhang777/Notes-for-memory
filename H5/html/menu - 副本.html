@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*,ul,li,span{padding: 0;margin: 0;}
+		ul,li{list-style: none;}
+		a{text-decoration:none;}
+		.u1{
+			width: 800px;
+			margin: 50px auto;
+			overflow: hidden;
+			padding-left: 20px;
+			border-bottom: 10px solid #ff5400;
+		}
+		.u1>li{
+			float: left;
+			border-right: 1px solid #fff;
+		}
+		.u1>li a{
+			padding: 0 5px;
+			background-color: #ccc;
+			color:#000;
+			height: 30px;
+			width: 100px;
+			line-height: 30px;
+			text-align: center;
+			font-family: 微軟雅黑;
+			font-size: 16px;
+			display: block;
+		}
+		.u1>li>a>span{
+			display: none;
+		}
+		.u1>li:hover>a>span{
+			position: relative;
+			font-weight: bold;
+			color:#fff;
+			/*background-color: #ff5400;*/
+			background-image:linear-gradient(#ffb400,#ff5400);
+			top: -30px;
+			display: block;
+		} 
+		.u1>li:hover>a{
+			background-image:linear-gradient(#ffb400,#ff5400);
+			background-color: #ff5400;
+		} 
+		.u1>li>ul{
+			position: absolute;	
+			display: none;
+			height: 0;
+			overflow: hidden;
+		}
+		.u1 li{float: left;
+		}
+		.u1>li:hover>ul{
+			/*display: block;	*/
+		}
+		.u1>li>ul a{
+				background-image:linear-gradient(green,#88be07);
+				color:#fff;
+				border-right: 1px solid #000;
+		}
+		
+		.u1>li>ul>li:hover>a{
+			background-image:linear-gradient(#ff5400,#ffb400);
+		}
+		.u1>li>ul span{
+			display: block;
+			border-right: 8px solid transparent;
+			border-left: 8px solid transparent;
+			border-top: 0;
+			border-bottom: 8px solid green;
+			width: 0;
+			margin: 0 20px;
+		}
+		.u1>li>ul:hover span{
+			border-bottom: 8px solid #fff;
+		}
+	</style>
+	<script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+	<script>
+		// javascript
+		window.onload=function(){
+			var u=document.getElementsByClassName("u1")[0]
+			var Lis = u.getElementsByTagName("li")
+			for(var i=0;i<Lis.length;i++){
+				Lis[i].onmouseover=function(){
+					var u1=this.getElementsByTagName("ul")[0]
+					if(u1!=undefined){
+						u1.style.display="block"
+						AddH(u1.id,1)
+					}
+
+				}
+				Lis[i].onmouseout = function(){
+					var u1=this.getElementsByTagName("ul")[0]
+					if(u1!=undefined){
+						AddH(u1.id,-1)
+					}
+				}
+			}
+			
+		}
+		var h=null,t=null;
+		function AddH(id,cont){
+			clearTimeout(t)
+			var ulList=document.getElementById(id)
+			h=ulList.offsetHeight
+			h+=cont
+			if(cont>0){
+				if(h<=37){
+					ulList.style.height = h+"px"
+					t=setTimeout("AddH('"+id+"',"+cont+")",10)
+				}else{
+					return
+				}	
+			}
+			if(cont<0){
+				if(h>0){
+					ulList.style.height=h+"px"
+					t=setTimeout("AddH('"+id+"',"+cont+")",10)
+				}else{
+					ulList.style.height=0+"px"
+					ulList.style.display="none"
+				}
+			}
+		}
+		// function SubH(id){
+		// 	clearTimeout(t)
+		// 	var ulList = document.getElementById(id)
+		// 	h=ulList.offsetHeight
+		// 	h--
+		// 	if(h<=0){
+		// 		ulList.style.height=0+"px"
+		// 		ulList.style.display="none"
+		// 	}else{
+		// 		ulList.style.height=h+"px"
+		// 		t=setTimeout("SubH('"+id+"')",10)
+		// 	}
+		// }
+		// jQuery
+		// $(function(){
+		// 	$(".u1 li").stop().mouseenter(function(){
+		// 		$(this).find("ul").stop().slideDown()
+		// 	}).stop().mouseleave(function(){
+		// 		$(this).find("ul").stop().slideUp()
+		// 	})
+		// })
+	</script>
+</head>
+<body>
+	<ul class="u1">
+		<li>
+			<a href="#">首页<span>Home</span></a>
+		</li>
+		<li>
+			<a href="#">课程大厅<span>Course</span></a>
+			<ul id="er">
+				<span></span>
+				<li>
+					<a href="#">前端课程</a>
+				</li>
+				<li>
+					<a href="#">手机开发</a>
+				</li>
+				<li>
+					<a href="#">后台编程</a>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">学习中心<span>Learn</span></a>
+		</li>
+		<li>
+			<a href="#">关于我们<span>About</span></a>
+		</li>
+	</ul>
+</body>
+</html>
