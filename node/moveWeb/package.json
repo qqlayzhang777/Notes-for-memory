@@ -1,0 +1,27 @@
+{
+  "name": "imooc",
+  "version": "1.0.0",
+  "description": "A example for write a module",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.15.4",
+    "jade": "^1.11.0",
+    "moment": "^2.18.1",
+    "mongoose": "^4.11.11",
+    "pug": "^2.0.0-rc.4",
+    "serve-static": "^1.12.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": " (none)",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "()\u001b[Dnone)\u001b[Dd\u001b[2)\u001b[Dd\u001b[2~\u001b[D)"
+  },
+  "keywords": [
+    "()\u001b[Dnone)"
+  ]
+}
