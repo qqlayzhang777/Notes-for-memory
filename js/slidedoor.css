@@ -1,0 +1,43 @@
+.ccc{
+	overflow: hidden;
+	margin:0 auto;
+	height: 477px;
+	position: relative;
+	border: 1px solid #ccc;
+	border-top:none;
+}
+img{
+	display:block;
+	position:absolute;
+	left:0;
+	border:1px solid #ccc;
+	
+}
+body{height: 800px;}
+
+.move{width: 400px;margin: 0 auto;
+	padding: 10px 10px;
+	border:1px solid red;
+	overflow: hidden;
+}
+.move li{width: 130px;height: 50px;float: left;
+	background-color: #999;
+	margin: 10px 10px;
+	border:1px solid  pink;	
+	filter:alpha(opacity:30);
+	opacity:0.3;	
+}
+
+/*.ccc{
+	height:477px;
+	margin:0 auto;
+	position:relative;
+	border-right:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+	overflow:hidden;
+}
+img{position:absolute;
+	left:0;
+	display:block;
+	border-left:1px solid #ccc;
+}*/
