@@ -1,0 +1,124 @@
+/*图片预加载*/
+
+#preload-01 { background: url(http://domain.tld/image-01.png) no-repeat -9999px -9999px; }
+#preload-02 { background: url(http://domain.tld/image-02.png) no-repeat -9999px -9999px; }
+#preload-03 { background: url(http://domain.tld/image-03.png) no-repeat -9999px -9999px; }
+
+<!-- 将这三个ID选择器应用到(X)HTML元素中，我们便可通过CSS的background属性将图片预加载到屏幕外的背景上。只要这些图片的路径保持不变，当它们在Web页面的其他地方被调用时，浏览器就会在渲染过程中使用预加载（缓存）的图片。简单、高效，不需要任何JavaScript。
+
+该方法虽然高效，但仍有改进余地。使用该法加载的图片会同页面的其他内容一起加载，增加了页面的整体加载时间。为了解决这个问题，我们增加了一些JavaScript代码，来推迟预加载的时间，直到页面加载完毕。代码如下： -->
+
+
+function preloader() {
+	if (document.getElementById) {
+		document.getElementById("preload-01").style.background = "url(http://domain.tld/image-01.png) no-repeat -9999px -9999px";
+		document.getElementById("preload-02").style.background = "url(http://domain.tld/image-02.png) no-repeat -9999px -9999px";
+		document.getElementById("preload-03").style.background = "url(http://domain.tld/image-03.png) no-repeat -9999px -9999px";
+	}
+}
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(preloader);
+
+
+
+<!-- javascript方法 -->
+
+<div class="hidden">
+	<script type="text/javascript">
+			var images = new Array()
+			function preload() {
+				for (i = 0; i < preload.arguments.length; i++) {
+					images[i] = new Image()
+					images[i].src = preload.arguments[i]
+				}
+			}
+			preload(
+				"http://domain.tld/gallery/image-001.jpg",
+				"http://domain.tld/gallery/image-002.jpg",
+				"http://domain.tld/gallery/image-003.jpg"
+			)
+	</script>
+</div>
+
+
+
+<!-- JavaScript代码段2 -->
+
+该方法与上面的方法类似，也可以预加载任意数量的图片。将下面的脚本添加入任何Web页中，根据程序指令进行编辑即可。
+
+复制代码
+<div class="hidden">
+	<script type="text/javascript">
+			if (document.images) {
+				img1 = new Image();
+				img2 = new Image();
+				img3 = new Image();
+				img1.src = "http://domain.tld/path/to/image-001.gif";
+				img2.src = "http://domain.tld/path/to/image-002.gif";
+				img3.src = "http://domain.tld/path/to/image-003.gif";
+			}
+	</script>
+</div>
+
+
+<!-- 正如所看见，每加载一个图片都需要创建一个变量，如“img1 = new Image();”，及图片源地址声明，如“img3.src = "../path/to/image-003.gif";”。参考该模式，你可根据需要加载任意多的图片。
+
+我们又对该方法进行了改进。将该脚本封装入一个函数中，并使用 addLoadEvent（），延迟预加载时间，直到页面加载完毕。 -->
+
+
+function preloader() {
+	if (document.images) {
+		var img1 = new Image();
+		var img2 = new Image();
+		var img3 = new Image();
+		img1.src = "http://domain.tld/path/to/image-001.gif";
+		img2.src = "http://domain.tld/path/to/image-002.gif";
+		img3.src = "http://domain.tld/path/to/image-003.gif";
+	}
+}
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(preloader);
+
+
+
+<!-- 方法三：使用Ajax实现预加载
+
+上面所给出的方法似乎不够酷，那现在来看一个使用Ajax实现图片预加载的方法。该方法利用DOM，不仅仅预加载图片，还会预加载CSS、JavaScript等相关的东西。使用Ajax，比直接使用JavaScript，优越之处在于JavaScript和CSS的加载不会影响到当前页面。该方法简洁、高效。 -->
+
+window.onload = function() {
+	setTimeout(function() {
+		// XHR to request a JS and a CSS
+		var xhr = new XMLHttpRequest();
+		xhr.open('GET', 'http://domain.tld/preload.js');
+		xhr.send('');
+		xhr = new XMLHttpRequest();
+		xhr.open('GET', 'http://domain.tld/preload.css');
+		xhr.send('');
+		// preload image
+		new Image().src = "http://domain.tld/preload.png";
+	}, 1000);
+};
